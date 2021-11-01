@@ -1,0 +1,26 @@
+{
+    "CLUB_NAME" :"Zero Day ISFCR Center",
+    "SOCIALS" : {
+        "INSTAGRAM" : "https://instagram.com/zeroday.pesuecc",
+        "YOUTUBE"   : "https://www.youtube.com/channel/UCCY6x-SE_AVPLcMMTO1BKJA"
+    },
+    "PREFIX" : "-",
+    "ACTIVITY" : {
+        "TYPE" : "WATCHING",
+        "MESSAGE" : "YOU"
+    },
+    "EMBEDS" : {
+        "THEME" : "#000000"
+    },
+    "IGNORE": false,
+    "CONTRACTS" : true,
+    "WHITELISTED" : ["ADMIN","ADMINISTRATOR","ADMINISTRATORS"],
+    "DEVELOPERS" : {
+        "NAMES" : ["Mitul J", "Rahul S"],
+        "IDS"   : ["499909905306746891" , "465934212269211651"]
+    },
+    "LOGS" : {
+        "BOT"  : "bot-log",
+        "MOD"  : "mod-log"    
+    }
+}
