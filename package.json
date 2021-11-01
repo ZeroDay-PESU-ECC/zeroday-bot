@@ -4,7 +4,9 @@
   "description": "The Discord Bot for Zero Day ISFCR Center Discord Server",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "deploy": "echo \"SYNTAX: node src/deploy-commands (--r|--d) (--g|--t)\" && echo \"r-register d-deregister g-global t-testing server\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +18,7 @@
     "zeroday",
     "dicord-bot"
   ],
-  "author": "",
+  "author": "Mitul Joby <mitul.joby@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Zero-Day-ISFCR-Center/zeroday-bot/issues"
@@ -27,9 +29,14 @@
     "npm": ">=7.x"
   },
   "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
     "axios": "^0.24.0",
+    "discord-api-types": "^0.24.0",
     "discord.js": "^13.3.0",
     "dotenv": "^10.0.0",
     "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
   }
 }
