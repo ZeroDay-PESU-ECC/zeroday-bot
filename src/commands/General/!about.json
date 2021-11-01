@@ -1,0 +1,8 @@
+{
+    "name"          : "General",
+    "emoji"         : "✨",
+    "aliases"       : ["gen"],
+    "description"   : "General commands", 
+    "priority"      : 1,
+    "modsOnly"      : false
+}
