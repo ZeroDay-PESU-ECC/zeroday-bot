@@ -8,7 +8,7 @@ module.exports = {
     description: 'Sends club\'s social media handles',
     permissions: ['SEND_MESSAGES'],
     cooldown: false,
-    type: ['MESSAGE','SLASH'],
+    type: ['SLASH','MESSAGE'],
 	data: new SlashCommandBuilder()
 			.setName('socials')
 			.setDescription('Sends club\'s social media handles'),

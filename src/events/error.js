@@ -3,5 +3,6 @@ module.exports = {
     once: false,
     async handle(client, error) {
         console.error(error);
+        return;
     }
 }

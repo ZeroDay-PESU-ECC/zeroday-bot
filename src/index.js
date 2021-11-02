@@ -1,17 +1,21 @@
 const fs = require('fs');
+if (fs.existsSync('config/.env')) { require('dotenv').config({ path: './config/.env' }); }
 
-if (fs.existsSync('config/.env')) {
-	require('dotenv').config({ path: './config/.env' });
+if (process.env.NODE_ENV === "production"){
+	console.log('\nPRODUCTION MODE\n');
+} else {
+	console.log('\nDEVELOPMENT MODE\n');
 }
 
-const TOKEN =  (process.env.NODE_ENV === "production") ? process.env.TOKEN : process.env.DEV_TOKEN;
+const TOKEN =  (process.env.NODE_ENV === "production") ? process.env.PRO_TOKEN : process.env.DEV_TOKEN;
 	
-const { Client, Intents } = require('discord.js');
+const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ intents: Object.keys(Intents.FLAGS) }); // All intents
 const CONFIG = require('../config/config.json');
 Object.assign(client,CONFIG);
 
 client.categories = [];
+client.cooldowns  = new Collection();
 const commandFolders = fs.readdirSync('./src/commands');
 for (const folder of commandFolders) {
 	if (folder.toLowerCase() == 'readme.md' || folder.toLowerCase() == 'template') continue;

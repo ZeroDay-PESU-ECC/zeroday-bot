@@ -1,7 +1,7 @@
 {
     "name"          : "Administration",
     "emoji"         : "🔐",
-    "aliases"       : ["admin"],
+    "aliases"       : ["admin","admins"],
     "description"   : "Administrative commands", 
     "priority"      : 2,
     "modsOnly"      : true

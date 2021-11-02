@@ -4,10 +4,10 @@
   "description": "The Discord Bot for Zero Day ISFCR Center Discord Server",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "deploy": "echo \"SYNTAX: node src/deploy-commands (--r|--d) (--g|--t)\" && echo \"r-register d-deregister g-global t-testing server\" && exit 1",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node src/index.js",
+    "dev"   : "nodemon src/index.js",
+    "deploy": "node src/deploy-commands",
+    "test"  : "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "discord-api-types": "^0.24.0",
     "discord.js": "^13.3.0",
     "dotenv": "^10.0.0",
+    "firebase-admin": "^10.0.0",
     "node-fetch": "^3.0.0"
   },
   "devDependencies": {
