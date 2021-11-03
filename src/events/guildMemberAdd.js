@@ -22,11 +22,11 @@ module.exports = {
         .then( message => {
             message.channel.send({
                 files: [{
-                            attachment: './assets/contract.pdf',
+                            attachment: './media/contract.pdf',
                             name: 'Club-Contract.pdf'
                         },
                         {
-                            attachment: './assets/how-to-guide.mp4',
+                            attachment: './media/how-to-guide.mp4',
                             name: 'guide.mp4'
                         }]
             })
@@ -38,15 +38,19 @@ module.exports = {
                 .setDescription(
                     `**USER**    : <@${member.user.id}>\n`+
                     `**ID**      : ${member.user.id}`)
-                .addField('ERROR',`${error || ' '}`)
                 .setTimestamp();
-            const channel = member.guild.channels.cache.find(
+            const modLog = member.guild.channels.cache.find(
                 ch => ch.name.toLocaleLowerCase() == client.LOGS.MOD && 
-                ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL'])
+                ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL','EMBED_LINKS'])
             );
 
-            if (channel)
-                channel.send({ embeds: [failureEmbed] });
+            const botLog = member.guild.channels.cache.find(
+                ch => ch.name.toLocaleLowerCase() == client.LOGS.BOT && 
+                ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL','EMBED_LINKS'])
+            );
+
+            if (botLog) botLog.send({ content:`ERROR: \`\`\`${error}\`\`\` `, embeds: [failureEmbed] });
+            if (modLog) modLog.send({ embeds: [failureEmbed] });
             
             return;
         });

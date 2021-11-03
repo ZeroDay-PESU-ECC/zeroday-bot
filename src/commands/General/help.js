@@ -8,19 +8,19 @@ module.exports = {
 	description: 'Sends a guide of available commands or information regarding a particular category/command',
 	permissions: ['SEND_MESSAGES'],
     cooldown: false,
-    type: ['MESSAGE','SLASH'],
+    type: ['SLASH','MESSAGE'],
 	data: 
 		new SlashCommandBuilder()
 			.setName('help')
-			.setDescription('Sends a guide of available commands or information regarding a particular category/command')
+			.setDescription('Sends a guide of available commands')
 			.addStringOption(option => 
 				option
 					.setName('search')
-					.setDescription('Help on available categories and commands')
+					.setDescription('Information regarding a particular category or command')
 			),
 	async slash(client,interaction){
-		var args = (interaction.options.data[0])?[interaction.options.data[0]['value']]:[];
-		const [helpEmbed,found] = help(client,interaction.user,interaction.member,args); 
+		const query = interaction.options.getString('search');
+		const [helpEmbed,found] = help(client,interaction.user,interaction.member,query); 
 		if (found)
 			interaction.reply({ embeds: [helpEmbed], ephemeral: true });
 		else
@@ -28,24 +28,24 @@ module.exports = {
 		return;  
 	},	
 	async execute(client, message, args){
-		const [helpEmbed,found] = help(client,message.author,message.member,args); 
+		const query = (args[0]) ? (args.join(' ')) : null;
+		const [helpEmbed,found] = help(client,message.author,message.member,query); 
 		if (found)
 			message.channel.send({ embeds: [helpEmbed] })
 		else
 			message.reply('Category/Command was not found!');
 		return;  
 	}
-
 };
 
-function help(client,author,member,args) {
+function help(client,author,member,query) {
 	var found = false;
 	const helpEmbed = new MessageEmbed()
 		.setColor(client.EMBEDS.THEME)
 		.setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
 		.setFooter(`For more info ${client.PREFIX}help (command/category)`);
 
-	if (!args[0]) {
+	if (!query) {
 		helpEmbed.setTitle(`${client.user.username}'s Command Guide`);
 		helpEmbed.setDescription(`Hello there!\nThis is ${client.CLUB_NAME}'s very own discord bot!`);
 		for (let category of client.categories) {
@@ -53,7 +53,7 @@ function help(client,author,member,args) {
 			if (category.devMode && !client.DEVELOPERS.IDS.includes(author.id)) continue;
 			if (category.modsOnly)
 				if (!client.DEVELOPERS.IDS.includes(author.id))
-					if (!member.roles.cache.some(role => client.WHITELISTED.includes(role.name.toUpperCase())))
+					if (!member.roles.cache.some(role => client.WHITELISTED.ROLES.includes(role.name.toUpperCase())))
 						continue;
 			let commandList = '';
 			for (let cmd of category.commands) {
@@ -69,9 +69,9 @@ function help(client,author,member,args) {
 			if (category.devMode && !client.DEVELOPERS.IDS.includes(author.id)) continue;
 			if (category.modsOnly)
 				if (!client.DEVELOPERS.IDS.includes(author.id))
-					if (!member.roles.cache.some(role => client.WHITELISTED.includes(role.name.toUpperCase())))
+					if (!member.roles.cache.some(role => client.WHITELISTED.ROLES.includes(role.name.toUpperCase())))
 						continue;
-			if (category.name.toLowerCase() == args.join(' ').toLowerCase() || (category.aliases && category.aliases.includes(args.join(' ').toLowerCase())) ){
+			if (category.name.toLowerCase() == query.toLowerCase() || (category.aliases && category.aliases.includes(query.toLowerCase())) ){
 				var categoryHelp = category;
 				break;
 			}
@@ -92,10 +92,10 @@ function help(client,author,member,args) {
 				if (category.devMode && !client.DEVELOPERS.IDS.includes(author.id)) continue;
 				if (category.modsOnly)
 					if (!client.DEVELOPERS.IDS.includes(author.id))
-						if (!member.roles.cache.some(role => client.WHITELISTED.includes(role.name.toUpperCase())))
+						if (!member.roles.cache.some(role => client.WHITELISTED.ROLES.includes(role.name.toUpperCase())))
 							continue;
 				for (let cmd of category.commands){
-					if ( cmd.name.toLowerCase() == args.join(' ').toLowerCase() || (cmd.aliases && cmd.aliases.includes(args.join(' ').toLowerCase())) ){
+					if ( cmd.name.toLowerCase() == query.toLowerCase() || (cmd.aliases && cmd.aliases.includes(query.toLowerCase())) ){
 						var command = cmd; 
 						break;
 					}

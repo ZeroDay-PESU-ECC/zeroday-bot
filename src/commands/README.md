@@ -44,8 +44,8 @@ module.exports = {
     usage: 'name',              // Arguments: <required> (optional)
     description: 'Description', // String
     permissions: [],            // Array of string FLAGS or using permissions from discord.js
-    cooldown: false,            // Integer or false
-    type: ['MESSAGE','SLASH'],  // Type of command: MESSAGE or SLASH or BOTH
+    cooldown: false,            // Integer in ms or false
+    type: ['SLASH','MESSAGE'],  // Type of command: SLASH or MESSAGE or BOTH
     
     // If SLASH command
     data:  ,                    // Use SlashCommandBuilder() 
@@ -57,5 +57,9 @@ module.exports = {
     async execute(client, message, args){
         return message.reply('Reply');
     }
+}
+
+function commonFunction(){
+    ; // If any
 }
 ```

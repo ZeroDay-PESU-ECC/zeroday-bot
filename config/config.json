@@ -14,13 +14,21 @@
     },
     "IGNORE": false,
     "CONTRACTS" : true,
-    "WHITELISTED" : ["ADMIN","ADMINISTRATOR","ADMINISTRATORS"],
+    "WHITELISTED" : {
+        "ROLES" : ["ADMIN","ADMINISTRATOR","ADMINISTRATORS"],
+        "IDS"   : ["499909905306746891" , "465934212269211651"]
+    },
     "DEVELOPERS" : {
         "NAMES" : ["Mitul J", "Rahul S"],
         "IDS"   : ["499909905306746891" , "465934212269211651"]
     },
     "LOGS" : {
         "BOT"  : "bot-log",
-        "MOD"  : "mod-log"    
+        "MOD"  : "mod-log",
+        "FLAG" : "flag-log"    
+    },
+    "APIS" : {
+        "CHALLENGES"  : "https://zeroday.vercel.app/api/db/challenges",
+        "LEADERBOARD" : "https://zeroday.vercel.app/api/db/leaderboard"
     }
 }

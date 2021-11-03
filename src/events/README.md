@@ -12,6 +12,7 @@ module.exports = {
     once: false,                     // boolean - optional but preferred
     async handle(client, ...args) {
         ...
+        return;
     }
 }
 ```
