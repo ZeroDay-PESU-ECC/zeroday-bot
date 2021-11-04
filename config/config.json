@@ -9,6 +9,11 @@
         "TYPE" : "WATCHING",
         "MESSAGE" : "YOU"
     },
+    "MESSAGES" : {
+        "ENTRY"   : "Welcome to Zero Day ISFCR Center!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.",
+        "HELP"    : "Hello there!\nThis is Zero Day ISFCR Center's very own discord bot!",
+        "SOCIALS" : "Hello from Zero Day ISFCR Center!\nYou can follow us on our social media handles using the buttons below :)"
+    },
     "EMBEDS" : {
         "THEME" : "#000000"
     },
@@ -28,6 +33,7 @@
         "FLAG" : "flag-log"    
     },
     "APIS" : {
+        "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",  
         "CHALLENGES"  : "https://zeroday.vercel.app/api/db/challenges",
         "LEADERBOARD" : "https://zeroday.vercel.app/api/db/leaderboard"
     }

@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
+	disabled: false,
 	name: 'help',
 	aliases: ['h'],
 	usage: 'help (category-name|command-name)',
@@ -47,7 +48,7 @@ function help(client,author,member,query) {
 
 	if (!query) {
 		helpEmbed.setTitle(`${client.user.username}'s Command Guide`);
-		helpEmbed.setDescription(`Hello there!\nThis is ${client.CLUB_NAME}'s very own discord bot!`);
+		helpEmbed.setDescription(`${client.MESSAGES.HELP}`);
 		for (let category of client.categories) {
 			if (!category.commands[0]) continue;
 			if (category.devMode && !client.DEVELOPERS.IDS.includes(author.id)) continue;

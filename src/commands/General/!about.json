@@ -4,5 +4,6 @@
     "aliases"       : ["gen"],
     "description"   : "General commands", 
     "priority"      : 1,
-    "modsOnly"      : false
+    "modsOnly"      : false,
+    "disabled"      : false
 }

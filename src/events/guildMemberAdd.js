@@ -1,6 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports = {
+    disabled: false,
     name: 'guildMemberAdd',
     once: false,
     async handle(client, member) {
@@ -10,14 +11,10 @@ module.exports = {
         const welcomeEmbed = new MessageEmbed()
             .setColor(client.EMBEDS.MAIN)
             .setTitle(`Welcome ${member.user.username}!`)
-            .setDescription(
-                `Welcome to ${client.CLUB_NAME}!\n`+
-                `New members are required to sign the contract given below.\n`+
-                `For info on how to add digital signatures, check the mp4 video guide.`)
+            .setDescription(`${client.MESSAGES.ENTRY}`)
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
             .setFooter('If you need help, feel free to ask!');
             
-
         member.send({ embeds: [welcomeEmbed] })
         .then( message => {
             message.channel.send({

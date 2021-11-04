@@ -1,7 +1,9 @@
 const { MessageEmbed, Collection } = require('discord.js');
 
 module.exports = {
-    name: 'messageCreate',
+    disabled: false,
+	name: 'messageCreate',
+    once: false,
     async handle(client, message) {
 		if (message.channel.type != 'GUILD_TEXT') return;
 

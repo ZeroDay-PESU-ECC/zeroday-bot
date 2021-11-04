@@ -3,6 +3,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const axios = require('axios').default;
 
 module.exports = {
+	disabled: false,
 	name: 'leaderboard',
 	aliases: ['lb','leaderboards'],
 	usage: 'leaderboard',
@@ -35,12 +36,12 @@ function sendLeaderboard(client,interactionMessage,author){
 			.setFooter('Don\'t see your name? Solve more challenges!');
 
 		var maxEntries= response.data.length;
-		if (maxEntries>10) maxEntries = 10; 
+		if (maxEntries>5) maxEntries = 5; 
 		if (response.data.length > 0) {
-			leaderboardEmbed.setDescription(`Here are the top ${response.data.length} users!`);
+			leaderboardEmbed.setDescription(`Here are the top ${maxEntries} users!`);
 			response.data.splice(0,maxEntries).forEach(user => {			
-				leaderboardEmbed.addField(`${user.name} - ${user.points}`,
-										`**SOLVED**: \n\`${ (user.challs?.length>0)? user.challs.join(', '): `NONE`}\`\n\u200b`);
+				leaderboardEmbed.addField(`${user.name} : ${user.points}`,
+										  `**SOLVED**\n\`\`\`${ (user.challs?.length>0)? user.challs.join(', '): `NONE`}\`\`\`\n\u200b`);
 			});
 		}
 		else

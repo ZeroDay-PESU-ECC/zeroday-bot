@@ -17,6 +17,9 @@ For registering slash commands:
 * `DEV_BOTID`
 * `DEV_SERVER`
 
+For connecting to zeroday API:
+* `ADMIN_APIKEY` 
+
 ## [config.json](config.json)
 
 ```
@@ -29,6 +32,11 @@ For registering slash commands:
     "ACTIVITY" : {
         "TYPE"    : "",     // Optional - Default "LISTENING"
         "MESSAGE" : ""      // Optional - Default "YOU"
+    },
+    "MESSAGES" : {          // Command replies 
+        "ENTRY"   : "",     // Required
+        "HELP"    : "",     // Required    
+        "SOCIALS" : ""      // Required
     },
     "EMBEDS" : {
         "THEME" : "#000000" // Main embed theme colour
@@ -44,15 +52,12 @@ For registering slash commands:
         "IDS"   : [""]      // Devs discord IDs
     },
     "LOGS" : {
-        "BOT"  : "bot-log", // Channel name for bot logs
-        "MOD"  : "mod-log"  // Channel name for mod logs (Bans, Kicks, etc) 
-    }
-    "LOGS" : {
-        "BOT"  : "bot-log", // Channel name for bot logs
-        "MOD"  : "mod-log", // Channel name for mod logs (Bans, Kicks, etc) 
+        "BOT"  : "bot-log", // Channel name for bot logs (command errors, api errors, etc)
         "FLAG" : "flag-log" // Channel name for CTF logs (flag submissions, etc)    
+        "MOD"  : "mod-log", // Channel name for mod logs (Bans, Kicks, etc) 
     },
     "APIS" : {
+        "ADMIN"       : "", // API link
         "CHALLENGES"  : "", // API link 
         "LEADERBOARD" : ""  // API link
     }

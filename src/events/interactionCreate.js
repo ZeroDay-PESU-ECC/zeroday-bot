@@ -1,6 +1,7 @@
 const { MessageEmbed, Collection } = require('discord.js');
 
 module.exports = {
+	disabled: false,
     name: 'interactionCreate',
     once: false,
     async handle(client, interaction) {

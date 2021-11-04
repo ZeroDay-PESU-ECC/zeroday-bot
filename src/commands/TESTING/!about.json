@@ -4,5 +4,6 @@
     "aliases"       : ["test"],
     "description"   : "Commands under development and testing and available only to bot developers.", 
     "priority"      : 99,
-    "modsOnly"      : true
+    "modsOnly"      : true,
+    "disabled"      : false
 }

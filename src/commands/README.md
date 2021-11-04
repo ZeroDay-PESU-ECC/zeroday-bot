@@ -27,6 +27,7 @@ Category-name
     "description"   : "Description",       // string 
     "priority"      : 0                    // number - required
     "modsOnly"      : false                // boolean
+    "disabled"      : false                // boolean
 }
 ```
 
@@ -39,6 +40,7 @@ Category-name
 
 ```
 module.exports = {
+    disabled: false,            // Boolean
     name: 'name',               // lowercase only
     aliases: ['alias1'],        // Array, lowercase only   
     usage: 'name',              // Arguments: <required> (optional)

@@ -1,4 +1,5 @@
 module.exports = {
+    disabled: false,
     name: 'ping',
     aliases: ['check'],
     usage: 'ping',

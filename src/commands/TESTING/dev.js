@@ -1,4 +1,5 @@
 module.exports = {
+    disabled: false,
     name: 'dev',
     aliases: ['development'],
     usage: 'dev',
