@@ -2,6 +2,7 @@ const { Permissions } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
+    disabled: false,
     name: 'name',               // lowercase only
     aliases: ['alias1'],        // Array, lowercase only   
     usage: 'name',              // Arguments: <required> (optional)

@@ -6,6 +6,7 @@ const CLIENTID =  (process.env.NODE_ENV === "production") ? process.env.PRO_BOTI
 const SERVERID =  (process.env.NODE_ENV === "production") ? process.env.PRO_SERVER : process.env.DEV_SERVER;
 
 module.exports = {
+	disabled: false,
     name: 'ready',
     once: true,
     async handle(client) {

@@ -4,5 +4,6 @@
     "aliases"       : ["admin","admins"],
     "description"   : "Administrative commands", 
     "priority"      : 2,
-    "modsOnly"      : true
+    "modsOnly"      : true,
+    "disabled"      : false
 }

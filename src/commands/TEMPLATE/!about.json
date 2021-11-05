@@ -4,5 +4,6 @@
     "aliases"       : ["alias1"],
     "description"   : "Description", 
     "priority"      : 0,
-    "modsOnly"      : false
+    "modsOnly"      : false,
+    "disabled"      : true
 }

@@ -2,6 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
+    disabled: false,
     name: 'ban',
     aliases: ['bar'],
     usage: 'ban <user> (reason)',

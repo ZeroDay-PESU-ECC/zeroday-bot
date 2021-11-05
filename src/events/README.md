@@ -8,6 +8,7 @@ Check [discord.js documentaion](https://discord.js.org/) for available client ev
 
 ```
 module.exports = {
+    disabled: false,                 // boolean - required       
     name: 'event-name',              // string  - required
     once: false,                     // boolean - optional but preferred
     async handle(client, ...args) {

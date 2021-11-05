@@ -3,6 +3,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const axios = require('axios').default;
 
 module.exports = {
+	disabled: false,
 	name: 'challenges',
 	aliases: ['challenge'],
 	usage: 'challenges',

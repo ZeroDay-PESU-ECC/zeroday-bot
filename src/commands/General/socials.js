@@ -2,6 +2,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
+    disabled: false,
     name: 'socials',
     aliases: ['social','insta','instagram','yt','youtube'],
     usage: 'socials',
@@ -27,9 +28,7 @@ module.exports = {
 function socials(client,user){
     const socialsEmbed = new MessageEmbed()
         .setTitle(`Hey there ${ user.username }!`)
-        .setDescription(
-            `Hello from ${client.CLUB_NAME}!\n`+
-            `You can follow us on our social media handles using the buttons below :)`)
+        .setDescription(`${client.MESSAGES.SOCIALS}`)
         .setColor(client.EMBEDS.THEME)
         .setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
 
