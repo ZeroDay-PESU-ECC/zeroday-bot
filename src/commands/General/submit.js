@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const axios = require('axios').default;
 
@@ -79,7 +79,32 @@ module.exports = {
 		return;		
 	},
 	async execute(client,message) {
-		message.reply('Info on submission of flags...');
-		// TO DO (MAYBE SEND A PIC OF HOW TO)
+		const submitEmbed = new MessageEmbed()
+			.setColor(client.EMBEDS.THEME)
+			.setTitle(`GUIDE TO SUBMIT FLAGS`)
+			.setDescription('Flags can be only submitted through slash interactions!\nFollow the intructions below to submit a flag!')
+			.setFooter('If you need help, feel free to ask!')
+			.setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
+			
+		message.channel.send({ embeds: [submitEmbed] })
+		.then( message => {
+			client.ATTACHMENTS.SUBMIT.forEach(attachment => {
+				const image = new MessageAttachment().setFile(attachment.PATH,attachment.NAME);
+				message.channel.send({
+					embeds : [new MessageEmbed().setTitle(attachment.MESSAGE).setImage(`attachment://${attachment.NAME}`)],
+					files : [image]
+				});
+			});
+		})
+		.catch((error) => {    
+			const botLog = message.guild.channels.cache.find(
+				ch => ch.name.toLocaleLowerCase() == client.LOGS.BOT && 
+				ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL','EMBED_LINKS'])
+			);
+
+			if (botLog) botLog.send(`ERROR: \n\`\`\`${error}\`\`\` `);
+			return;
+		});
+		return;
 	}
 };

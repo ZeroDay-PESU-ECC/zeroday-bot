@@ -9,7 +9,7 @@ module.exports = {
         if (!client.CONTRACTS) return;
 
         const welcomeEmbed = new MessageEmbed()
-            .setColor(client.EMBEDS.MAIN)
+            .setColor(client.EMBEDS.THEME)
             .setTitle(`Welcome ${member.user.username}!`)
             .setDescription(`${client.MESSAGES.ENTRY}`)
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
@@ -19,12 +19,12 @@ module.exports = {
         .then( message => {
             message.channel.send({
                 files: [{
-                            attachment: './media/contract.pdf',
-                            name: 'Club-Contract.pdf'
+                            name: client.ATTACHMENTS.GUIDE.NAME,
+                            attachment: client.ATTACHMENTS.GUIDE.PATH
                         },
                         {
-                            attachment: './media/how-to-guide.mp4',
-                            name: 'guide.mp4'
+                            name: client.ATTACHMENTS.CONTRACT.NAME,
+                            attachment: client.ATTACHMENTS.CONTRACT.PATH
                         }]
             })
         })

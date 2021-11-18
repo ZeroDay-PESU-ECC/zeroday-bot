@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed, MessageAttachment } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const axios = require('axios').default;
 
@@ -80,8 +80,32 @@ module.exports = {
 		return;		
 	},
 	async execute(client,message) {
-		message.reply('How to guide comming soon...');
+		const deleteEmbed = new MessageEmbed()
+			.setColor(client.EMBEDS.THEME)
+			.setTitle(`GUIDE TO DELETE CHALLENGES`)
+			.setDescription(`Challenges can be only deleted by whitelisted users!\nFollow the instructions below to delete a challenge.`)
+            .setFooter('If you need help, feel free to ask!')
+			.setThumbnail(client.user.displayAvatarURL({ dynamic: true }));
+		
+		message.channel.send({ embeds: [deleteEmbed] })
+		.then( message => {
+			client.ATTACHMENTS.DELETE.forEach(attachment => {
+				const image = new MessageAttachment().setFile(attachment.PATH,attachment.NAME);
+				message.channel.send({
+					embeds : [new MessageEmbed().setTitle(attachment.MESSAGE).setImage(`attachment://${attachment.NAME}`)],
+					files : [image]
+				});
+			});
+		})
+		.catch((error) => {    
+			const botLog = message.guild.channels.cache.find(
+				ch => ch.name.toLocaleLowerCase() == client.LOGS.BOT && 
+				ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL','EMBED_LINKS'])
+			);
+
+			if (botLog) botLog.send(`ERROR: \n\`\`\`${error}\`\`\` `);
+			return;
+		});
 		return;
-		// TO DO (MAYBE SEND A PIC OF HOW TO FOR NEW MODS)
 	}
 };

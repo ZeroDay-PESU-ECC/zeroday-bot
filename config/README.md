@@ -60,7 +60,38 @@ For connecting to zeroday API:
         "ADMIN"       : "", // API link
         "CHALLENGES"  : "", // API link 
         "LEADERBOARD" : ""  // API link
-    }
+    },
+    "ATTACHMENTS" : {
+        "CONTRACT" : {      // Required when CONTRACTS mode set true
+            "NAME" : "",
+            "PATH" : ""
+        },
+        "GUIDE"    : {      // Required when CONTRACTS mode set true
+            "NAME" : "",
+            "PATH" : ""
+        },
+        "CREATE"   : [
+            {
+                "MESSAGE" : "",  
+                "NAME" : "", 
+                "PATH" : ""
+            }...
+        ],
+        "DELETE"   : [
+            {
+                "MESSAGE" : "",
+                "NAME" : "",
+                "PATH" : ""
+            }...
+        ],
+        "SUBMIT"   : [
+            {
+                "MESSAGE" : "",
+                "NAME" : "",
+                "PATH" : ""
+            }...
+        ]
+    },
 }
 ```
 
