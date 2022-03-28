@@ -1,6 +1,6 @@
 const fs = require('fs');
-//if (fs.existsSync('config/.env')) { require('dotenv').config({ path: './config/.env' }); }
-//require('dotenv').config();
+if (fs.existsSync('config/.env')) { require('dotenv').config({ path: './config/.env' }); }
+require('dotenv').config();
 
 if (process.env.NODE_ENV === "production") {
 	console.log('\nPRODUCTION MODE\n');
