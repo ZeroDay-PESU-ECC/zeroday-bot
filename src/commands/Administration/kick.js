@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
 module.exports = {
-    disabled: false,
+    disabled: true,
     name: 'kick',
     aliases: ['boot','yeet'],
     usage: 'kick <user> (reason)',

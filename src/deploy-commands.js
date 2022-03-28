@@ -24,7 +24,7 @@ for (const folder of commandFolders) {
 	const commandFiles = fs.readdirSync(`./src/commands/${folder}`).filter(file => file.endsWith('.js'));
 	for (const file of commandFiles) {
 		const command = require(`./commands/${folder}/${file}`);
-		if (command.type.includes('SLASH')) 
+		if (!command.disabled && command.type.includes('SLASH')) 
 			commands.push(command.data.toJSON());
 	}
 }
