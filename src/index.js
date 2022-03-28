@@ -1,6 +1,6 @@
 const fs = require('fs');
-//if (fs.existsSync('config/.env')) { require('dotenv').config({ path: './config/.env' }); }
-//require('dotenv').config();
+if (fs.existsSync('config/.env')) { require('dotenv').config({ path: './config/.env' }); }
+require('dotenv').config();
 
 if (process.env.NODE_ENV === "production"){
 	console.log('\nPRODUCTION MODE\n');
@@ -10,6 +10,11 @@ if (process.env.NODE_ENV === "production"){
 
 const TOKEN =  (process.env.NODE_ENV === "production") ? process.env.PRO_TOKEN : process.env.DEV_TOKEN;
 	
+if (!TOKEN) {
+	console.log('\nERROR: No token found. Add env variables or make .env file in ./config\n');
+	process.exit(1);
+}
+
 const { Client, Intents, Collection } = require('discord.js');
 const client = new Client({ intents: Object.keys(Intents.FLAGS) }); // All intents
 const CONFIG = require('../config/config.json');

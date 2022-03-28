@@ -54,7 +54,7 @@ function sendSolved(client,interactionMessage,author){
 			ch.permissionsFor(client.user).has(['SEND_MESSAGES','VIEW_CHANNEL','EMBED_LINKS'])
 		);
 
-		interactionMessage.reply(`Sorry there was an error, could not fetch challenges solved!`,{ephemeral: true });
+		interactionMessage.reply(`Sorry there was an error, could not fetch challenges solved! Perhaps you haven't any challenges yet.`,{ephemeral: true });
 		if (botLog) botLog.send({ embeds: [failureEmbed] });
 	})
 }
