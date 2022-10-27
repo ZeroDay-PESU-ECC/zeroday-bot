@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
     disabled: false,
@@ -10,28 +10,28 @@ module.exports = {
     cooldown: 5000,
     type: ['MESSAGE'],
     async execute(client, message) {
-        const contractEmbed = new MessageEmbed()
+        const contractEmbed = new EmbedBuilder()
             .setColor(client.EMBEDS.THEME)
-            .setTitle(`Club Contract`)
+            .setTitle('Club Contract')
             .setDescription(`${client.MESSAGES.ENTRY}`)
             .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
-            .setFooter('If you need help, feel free to ask!');
+            .setFooter({ text: 'If you need help, feel free to ask!' });
 
         message.channel.send({ embeds: [contractEmbed] })
-            .then(message => {
-                message.channel.send({
+            .then(msg => {
+                msg.channel.send({
                     files: [{
                         name: client.ATTACHMENTS.GUIDE.NAME,
-                        attachment: client.ATTACHMENTS.GUIDE.PATH
+                        attachment: client.ATTACHMENTS.GUIDE.PATH,
                     },
                     {
                         name: client.ATTACHMENTS.CONTRACT.NAME,
-                        attachment: client.ATTACHMENTS.CONTRACT.PATH
-                    }]
-                })
+                        attachment: client.ATTACHMENTS.CONTRACT.PATH,
+                    }],
+                });
             })
             .catch((error) => {
-                const failureEmbed = new MessageEmbed()
+                const failureEmbed = new EmbedBuilder()
                     .setColor('#FF0000')
                     .setTitle(`CONTRACT NOT SENT TO ${message.author.user.tag}`)
                     .setDescription(
@@ -40,12 +40,12 @@ module.exports = {
                     .setTimestamp();
                 const modLog = message.author.guild.channels.cache.find(
                     ch => ch.name.toLocaleLowerCase() == client.LOGS.MOD &&
-                        ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS'])
+                        ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
                 );
 
                 const botLog = message.author.guild.channels.cache.find(
                     ch => ch.name.toLocaleLowerCase() == client.LOGS.BOT &&
-                        ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS'])
+                        ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
                 );
 
                 if (botLog) botLog.send({ content: `ERROR: \`\`\`${error}\`\`\` `, embeds: [failureEmbed] });
@@ -54,5 +54,5 @@ module.exports = {
                 return;
             });
         return;
-    }
+    },
 };

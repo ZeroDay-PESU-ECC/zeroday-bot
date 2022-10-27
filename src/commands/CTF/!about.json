@@ -1,0 +1,9 @@
+{
+    "name"          : "ctf",
+    "emoji"         : "🏴",
+    "aliases"       : ["ctfs"],
+    "description"   : "Commands to help with CTFs", 
+    "priority"      : 0,
+    "modsOnly"      : false,
+    "disabled"      : true
+}

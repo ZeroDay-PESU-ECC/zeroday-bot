@@ -1,9 +1,11 @@
+const { Events } = require('discord.js');
+
 module.exports = {
     disabled: false,
-    name: 'error',
+    name: Events.Error,
     once: false,
-    async handle(client,warning) {
+    async handle(client, warning) {
         console.warn(warning);
         return;
-    }
-}
+    },
+};

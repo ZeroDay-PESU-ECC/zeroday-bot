@@ -4,21 +4,15 @@
 
 Create a `.env` file of the format [example.env](./example.env) in [config](.\config) or add neccessary environmental variables to hosting service. 
 
-For `production` or `development`:
-* `NODE_ENV`
-
-For deploying bot (can be same):
-* `PRO_TOKEN`
-* `DEV_TOKEN`
+For deploying bot:
+* `TOKEN`
 
 For registering slash commands:
-* `PRO_BOTID`
-* `PRO_SERVER` 
-* `DEV_BOTID`
-* `DEV_SERVER`
+* `GUILD_ID`
+* `CLIENT_ID`
 
 For connecting to zeroday API:
-* `ADMIN_APIKEY` 
+* `ADMIN_KEY` 
 
 ## [config.json](config.json)
 
@@ -44,7 +38,7 @@ For connecting to zeroday API:
     "IGNORE": false,        // Whether to ignore non-whitelisted roles
     "CONTRACTS" : true,     // Whether to send contracts and how to guide to new members
     "WHITELISTED" : {
-        "ROLES" : [],       // Whitelisted discord roles
+        "ROLES" : [],       // Whitelisted discord roles names
         "IDS"   : []        // Whitelisted discord user IDs
     },
     "DEVELOPERS" : {
@@ -70,21 +64,21 @@ For connecting to zeroday API:
             "NAME" : "",
             "PATH" : ""
         },
-        "CREATE"   : [
+        "CREATE" : [
             {
                 "MESSAGE" : "",  
                 "NAME" : "", 
                 "PATH" : ""
             }...
         ],
-        "DELETE"   : [
+        "DELETE" : [
             {
                 "MESSAGE" : "",
                 "NAME" : "",
                 "PATH" : ""
             }...
         ],
-        "SUBMIT"   : [
+        "SUBMIT" : [
             {
                 "MESSAGE" : "",
                 "NAME" : "",

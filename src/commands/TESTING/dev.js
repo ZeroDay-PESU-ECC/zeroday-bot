@@ -5,11 +5,11 @@ module.exports = {
     usage: 'dev',
     description: 'Testing commands under development',
     permissions: [],
-    cooldown: false, 
+    cooldown: false,
     type: ['MESSAGE'],
-    async execute(client, message, args){
-        return message.reply(`No commands under development`);
+    async execute(client, message) {
+        return message.reply('No commands under development');
         // Testing command
         // ...
-    }
-}
+    },
+};

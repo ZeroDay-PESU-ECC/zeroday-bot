@@ -1,39 +1,47 @@
 {
-    "CLUB_NAME" :"Zero Day ISFCR Center",
-    "SOCIALS" : {
-        "INSTAGRAM" : "https://instagram.com/zeroday.pesuecc",
-        "YOUTUBE"   : "https://www.youtube.com/channel/UCCY6x-SE_AVPLcMMTO1BKJA"
+    "CLUB_NAME" : "Zero Day PESU ECC",
+    "SOCIALS"   : {
+        "INSTAGRAM": "https://instagram.com/zeroday.pesuecc",
+        "YOUTUBE"  : "https://www.youtube.com/channel/UCCY6x-SE_AVPLcMMTO1BKJA"
     },
-    "PREFIX" : "-",
+    "PREFIX" : "=",
     "ACTIVITY" : {
-        "TYPE" : "WATCHING",
+        "TYPE"    : "WATCHING",
         "MESSAGE" : "YOU"
     },
     "MESSAGES" : {
-        "ENTRY"   : "Welcome to Zero Day ISFCR Center!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.\nUpload your signed PDF to this [form](https://forms.gle/1Dwrdfb5dCzK1Mku7).",
-        "HELP"    : "Hello there!\nThis is Zero Day ISFCR Center's very own discord bot!",
-        "SOCIALS" : "Hello from Zero Day ISFCR Center!\nYou can follow us on our social media handles using the buttons below :)" 
+        "ENTRY"   : "Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.\nUpload your signed PDF to this [form]( ).",
+        "HELP"    : "Hello there!\nThis is Zero Day PESU ECC's very own discord bot!",
+        "SOCIALS" : "Hello from Zero Day PESU ECC!\nYou can follow us on our social media handles using the buttons below :)"
     },
     "EMBEDS" : {
         "THEME" : "#000000"
     },
-    "IGNORE": false,
+    "IGNORE"    : false,
     "CONTRACTS" : true,
     "WHITELISTED" : {
-        "ROLES" : ["ADMIN","ADMINISTRATOR","ADMINISTRATORS"],
-        "IDS"   : ["499909905306746891" , "465934212269211651"]
+        "ROLES" : [
+            "ADMIN",
+            "ADMINISTRATOR",
+            "ADMINISTRATORS"
+        ],
+        "IDS": []
     },
-    "DEVELOPERS" : {
-        "NAMES" : ["Mitul J", "Rahul S"],
-        "IDS"   : ["499909905306746891" , "465934212269211651"]
+    "DEVELOPERS": {
+        "NAMES": [
+            "Mitul J"
+        ],
+        "IDS": [
+            "499909905306746891"
+        ]
     },
-    "LOGS" : {
+    "LOGS": {
         "BOT"  : "bot-log",
         "MOD"  : "mod-log",
-        "FLAG" : "flag-log"    
+        "FLAG" : "flag-log"
     },
-    "APIS" : {
-        "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",  
+    "APIS": {
+        "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",
         "CHALLENGES"  : "https://zeroday.vercel.app/api/db/challenges",
         "LEADERBOARD" : "https://zeroday.vercel.app/api/db/leaderboard"
     },
@@ -42,59 +50,59 @@
             "NAME" : "Club-Contract.pdf",
             "PATH" : "./media/contract.pdf"
         },
-        "GUIDE"    :  {
+        "GUIDE" : {
             "NAME" : "guide.mp4",
             "PATH" : "./media/how-to-guide.mp4"
         },
-        "CREATE"   : [
+        "CREATE" : [
             {
                 "MESSAGE" : "Here is the format for the command.",
-                "NAME" : "createFormat.jpg",
-                "PATH" : "./media/createFormat.jpg"
+                "NAME"    : "createFormat.jpg",
+                "PATH"    : "./media/createFormat.jpg"
             },
             {
                 "MESSAGE" : "Here is an example to create a challenge.\n**Make sure you are using slash commands and not sending a message directly in the channel!**",
-                "NAME" : "createExample.jpg",
-                "PATH" : "./media/createExample.jpg"
+                "NAME"    : "createExample.jpg",
+                "PATH"    : "./media/createExample.jpg"
             },
             {
                 "MESSAGE" : "When a challenge is successfully registered, you should recieve a message of the below format.",
-                "NAME" : "createSuccess.jpg",
-                "PATH" : "./media/createSuccess.jpg"
+                "NAME"    : "createSuccess.jpg",
+                "PATH"    : "./media/createSuccess.jpg"
             }
         ],
-        "DELETE"   : [
+        "DELETE" : [
             {
                 "MESSAGE" : "Here is the format for the command.",
-                "NAME" : "deleteFormat.jpg",
-                "PATH" : "./media/deleteFormat.jpg"
+                "NAME"    : "deleteFormat.jpg",
+                "PATH"    : "./media/deleteFormat.jpg"
             },
             {
                 "MESSAGE" : "Here is an example to delete a challenge.\n**Make sure you are using slash commands and not sending a message directly in the channel!**",
-                "NAME" : "deleteExample.jpg",
-                "PATH" : "./media/deleteExample.jpg"
+                "NAME"    : "deleteExample.jpg",
+                "PATH"    : "./media/deleteExample.jpg"
             },
             {
                 "MESSAGE" : "When a challenge is successfully deleted, you should recieve a message of the below format.",
-                "NAME" : "deleteSuccess.jpg",
-                "PATH" : "./media/deleteSuccess.jpg"
+                "NAME"    : "deleteSuccess.jpg",
+                "PATH"    : "./media/deleteSuccess.jpg"
             }
         ],
-        "SUBMIT"   : [
+        "SUBMIT": [
             {
                 "MESSAGE" : "Here is the format for the command.",
-                "NAME" : "submitFormat.jpg",
-                "PATH" : "./media/submitFormat.jpg"
+                "NAME"    : "submitFormat.jpg",
+                "PATH"    : "./media/submitFormat.jpg"
             },
             {
                 "MESSAGE" : "Here is an example to submit a flag.\n**Make sure you are using slash commands and not sending a message directly in the channel!**",
-                "NAME" : "submitExample.jpg",
-                "PATH" : "./media/submitExample.jpg"
+                "NAME"    : "submitExample.jpg",
+                "PATH"    : "./media/submitExample.jpg"
             },
             {
                 "MESSAGE" : "On submitting a flag, if it is valid, it results in the below message.\nOnly you will be able to see this message!",
-                "NAME" : "submitSuccess.jpg",
-                "PATH" : "./media/submitSuccess.jpg"
+                "NAME"    : "submitSuccess.jpg",
+                "PATH"    : "./media/submitSuccess.jpg"
             }
         ]
     }
