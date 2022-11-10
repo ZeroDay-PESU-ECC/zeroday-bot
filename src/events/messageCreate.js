@@ -13,6 +13,29 @@ module.exports = {
             return message.channel.send(`${client.PREFIX}help for help on my commands!`);
         }
 
+        if (message.channel.name.startsWith('ticket-')) {
+            const contractLog = message.channel.guild.channels.cache.find(
+                ch => ch.name.toLocaleLowerCase() == 'contracts' &&
+                    ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
+            );
+            if (!contractLog) return;
+            if (message.attachments.size > 0) {
+                const attachment = message.attachments.first();
+                if (attachment.name.startsWith('contract-') && attachment.name.endsWith('.pdf')) {
+                    const embed = new EmbedBuilder()
+                        .setTitle('Contract Attachment')
+                        .setDescription(`**Channel:** <#${message.channel.id}>\n**User:** <@${message.author.id}>`)
+                        .setFooter({ text: `Uploaded by ${message.author.tag} at ${message.createdAt.toLocaleString()}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+                    contractLog.send({ embeds: [embed], files: [attachment] });
+                    message.channel.send(`Contract ${attachment.name} received. The <@&1031033314636730398> have been notified about this and will get back to you shortly.`);
+                }
+                else {
+                    message.channel.send('Please upload the contract as `contract-(your name).pdf`');
+                }
+            }
+            return;
+        }
+
         if (!message.content.startsWith(client.PREFIX)) return;
 
         if (!message.channel.permissionsFor(client.user).has('SEND_MESSAGES')) {

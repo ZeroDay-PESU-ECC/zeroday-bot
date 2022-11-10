@@ -6,12 +6,12 @@ module.exports = {
     aliases: ['bulkdel'],
     usage: 'purge <amount> (silent?)',
     description: 'Purges the specified amount of messages.',
-    permissions: ['ADMINISTRATOR'],
+    permissions: [PermissionFlagsBits.Administrator],
     cooldown: false,
     type: ['SLASH', 'MESSAGE'],
     data: new SlashCommandBuilder()
         .setName('purge')
-        .setDescription('Announces message in #Announcements channel.')
+        .setDescription('Purges the specified amount of messages.')
         .addIntegerOption(option =>
             option
                 .setName('amount')
@@ -30,6 +30,7 @@ module.exports = {
     async slash(client, interaction) {
         const amount = interaction.options.getInteger('amount');
         const silent = interaction.options.getBoolean('silent');
+        interaction.reply({ content: `Purging ${amount} messages...`, ephemeral: silent });
         purge(client, interaction.guild, interaction.user, interaction, amount, silent);
         return;
     },
@@ -64,7 +65,7 @@ function purge(client, guild, author, messageInteraction, amount, silent) {
 
     messageInteraction.channel.bulkDelete(amount, true)
         .then(() => {
-            if (!silent) messageInteraction.reply({ content: `Successfully deleted ${amount} messages!`, ephemeral: true });
+            if (!silent) messageInteraction.channel.send(`Successfully deleted ${amount} messages!`);
             if (modLog) modLog.send(`Purged ${amount} messages by <@${author.id}>`);
             return;
         })
@@ -72,7 +73,7 @@ function purge(client, guild, author, messageInteraction, amount, silent) {
             console.log(err);
             if (botLog) botLog.send(`<@${author.id}> tried to purge ${amount} messages\nError: ${err}`);
             if (modLog) modLog.send(`<@${author.id}> tried to purge ${amount} messages`);
-            messageInteraction.reply('I was unable to purge the messages.');
+            messageInteraction.reply('Sorry, could not purge the specified amount of messages.');
             return;
         });
 }

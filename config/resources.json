@@ -1,0 +1,98 @@
+{
+    "DESCRIPTION": "Here are some resources that you can use to learn more about CTFs!",
+    "CATEGORIES": [
+        {
+            "HEADING": "practice and compete",
+            "ALIASES": [
+                "practice",
+                "compete"
+            ],
+            "LINKS": {
+                "ctftime": "https://ctftime.org/",
+                "picoCTF": "https://picoctf.org/",
+                "tryhackme": "https://tryhackme.com/",
+                "hackthebox": "https://www.hackthebox.eu/",
+                "OverTheWire": "https://overthewire.org/wargames/",
+                "GoogleCTF": "https://capturetheflag.withgoogle.com/",
+                "CTFlearn": "https://ctflearn.com/",
+                "CryptoHack": "https://cryptohack.org/",
+                "crackmes": "https://crackmes.one/",
+                "backdoor": "https://backdoor.sdslabs.co/",
+                "pwnable.xyz": "https://pwnable.xyz/",
+                "pwnable.tw": "https://pwnable.tw/",
+                "pwnable.kr": "https://pwnable.kr/",
+                "reversing.kr": "https://reversing.kr/",
+                "webhacking.kr": "https://webhacking.kr/",
+                "w3challs": "https://w3challs.com/",
+                "hackxor": "https://hackxor.net/",
+                "vulnhub": "https://www.vulnhub.com/",
+                "OWASP Juice Shop": "https://owasp.org/www-project-juice-shop/",
+                "Damn Vulnerable Web Application": "https://dvwa.co.uk/"
+            }
+        },
+        {
+            "HEADING": "reading and wiki",
+            "ALIASES": [
+                "reads",
+                "wiki"
+            ],
+            "LINKS": {
+                "HackTricks": "https://book.hacktricks.xyz/",
+                "b10s wiki": "https://teambi0s.gitlab.io/bi0s-wiki/",
+                "CTF101": "https://ctf101.org/",
+                "Hacking Security": "https://www.hackingsecurity.com/",
+                "Hacking Security Ebooks": "https://github.com/yeahhub/Hacking-Security-Ebooks",
+                "IIT Breachers": "https://iitbreachers.com/",
+                "Trail of Bits": "https://trailofbits.github.io/ctf/",
+                "Basic Resources": "http://ctfs.github.io/resources/",
+                "rop tutorial": "https://tuonilabs.wordpress.com/tag/rop/",
+                "ir0nstone notes": "https://ir0nstone.gitbook.io/notes/"
+            }
+        },
+        {
+            "HEADING": "watching",
+            "ALIASES": [
+                "watch"
+            ],
+            "LINKS": {
+                "John Hammond": "https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg",
+                "LiveOverflow": "https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w",
+                "CryptoCat": "https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg",
+                "Pwnfunction": "https://www.youtube.com/channel/UCDqI2jOz0weumE8s7paEk6g",
+                "HackerSploit": "https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q",
+                "Bug Bounty Reports Explained": "https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q",
+                "IppSec": "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
+                "TheCyberMentor": "https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw",
+                "NahamSec": "https://www.youtube.com/channel/UCZn5mXqYzNfJGyTjJw3OwOg"
+            },
+                "TEST":{
+                "NetworkChuck": "https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA",
+                "CyberInsights": "https://www.youtube.com/channel/UC1CfXB_kRs3C-zaeTG3oGyg",
+                "GynvaeIEN": "https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA",
+                "InsiderPhD": "https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg",
+                "13Cubed": "https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA",
+                "MurmusCTF": "https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA",
+                "Malware Analysis For Hedgehogs": "https://www.youtube.com/channel/UC9-y-6csu5WGm29I7JiwpnA"
+            }
+        },
+        {
+            "HEADING": "extras",
+            "ALIASES": [
+                "extras"
+            ],
+            "LINKS": {
+                "Attack-Defense challenges": "https://github.com/SniperOJ/Attack-Defense-Challenges",
+                "awesome-ctf": "https://github.com/apsdehal/awesome-ctf",
+                "awesome-ctf-cheatsheet": "https://github.com/uppusaikiran/awesome-ctf-cheatsheet",
+                "CTF-CheatSheet": "https://github.com/Rajchowdhury420/CTF-CheatSheet",
+                "ctf-tools": "https://github.com/zardus/ctf-tools",
+                "ctf-katana": "https://github.com/JohnHammond/ctf-katana",
+                "Awesome hacking resources": "https://github.com/vitalysim/Awesome-Hacking-Resources",
+                "how2heap": "https://github.com/shellphish/how2heap",
+                "Privelege Escalation Cheatsheet": "https://github.com/Ignitetechnologies/Privilege-Escalation",
+                "Collection of web challenges": "https://github.com/orangetw/My-CTF-Web-Challenges",
+                "ctf-pwn-tips": "https://githubhot.com/repo/d3k4z/CTF-pwn-tips"
+            }
+        }
+    ]
+}

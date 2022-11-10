@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['new challenge', 'new', 'new chall'],
     usage: 'create',
     description: 'Info on how to create a new challenge',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: 10000,
     type: ['SLASH', 'MESSAGE'],
     data:

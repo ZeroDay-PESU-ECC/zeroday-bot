@@ -55,6 +55,13 @@ For connecting to zeroday API:
         "CHALLENGES"  : "", // API link 
         "LEADERBOARD" : ""  // API link
     },
+    "REACTROLES": {
+        "CHANNEL": "",      // Channel Name to check for reactions
+        "REACTIONS": {      
+            "": "",         // Reaction Emoji as key and Role to be added/removed as value
+            ...             
+        }
+    },
     "ATTACHMENTS" : {
         "CONTRACT" : {      // Required when CONTRACTS mode set true
             "NAME" : "",

@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['delete challenge', 'del', 'del chall'],
     usage: 'delete',
     description: 'Info on how to delete a challenge',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: 10000,
     type: ['SLASH', 'MESSAGE'],
     data:

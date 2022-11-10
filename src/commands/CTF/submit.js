@@ -1,6 +1,5 @@
-const { EmbedBuilder, MessageAttachment } = require('discord.js');
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const axios = require('axios').default;
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, AttachmentBuilder } = require('discord.js');
+const axios = require('axios');
 
 module.exports = {
     disabled: false,
@@ -8,7 +7,7 @@ module.exports = {
     aliases: ['flag'],
     usage: 'flag',
     description: 'Info on submitting a flag',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: 10000,
     type: ['SLASH', 'MESSAGE'],
     data:
@@ -88,7 +87,7 @@ module.exports = {
         message.channel.send({ embeds: [submitEmbed] })
             .then(msg => {
                 client.ATTACHMENTS.SUBMIT.forEach(attachment => {
-                    const image = new MessageAttachment().setFile(attachment.PATH, attachment.NAME);
+                    const image = new AttachmentBuilder().setFile(attachment.PATH, attachment.NAME);
                     msg.channel.send({
                         embeds: [new EmbedBuilder().setTitle(attachment.MESSAGE).setImage(`attachment://${attachment.NAME}`)],
                         files: [image],

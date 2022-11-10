@@ -1,6 +1,5 @@
-const { EmbedBuilder } = require('discord.js');
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const axios = require('axios').default;
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require('discord.js');
+const axios = require('axios');
 
 module.exports = {
     disabled: false,
@@ -8,7 +7,7 @@ module.exports = {
     aliases: ['lb', 'leaderboards'],
     usage: 'leaderboard',
     description: 'Shows current learderboard',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: 5000,
     type: ['SLASH', 'MESSAGE'],
     data:

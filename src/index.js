@@ -8,8 +8,8 @@ if (!TOKEN) {
     process.exit(1);
 }
 
-const { Client, GatewayIntentBits, Collection } = require('discord.js');
-const client = new Client({ intents: Object.keys(GatewayIntentBits) });
+const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
+const client = new Client({ intents: Object.keys(GatewayIntentBits), partials: Object.values(Partials) });
 const CONFIG = require('../config/config.json');
 Object.assign(client, CONFIG);
 client.ADMIN_KEY = process.env.ADMIN_KEY;

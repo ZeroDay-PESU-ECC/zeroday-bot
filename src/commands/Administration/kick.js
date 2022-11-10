@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['boot', 'yeet'],
     usage: 'kick <user> (reason)',
     description: 'Kicks mentioned user from server.',
-    permissions: ['KICK_MEMBERS'],
+    permissions: [PermissionFlagsBits.KickMembers],
     cooldown: false,
     type: ['SLASH', 'MESSAGE'],
     data: new SlashCommandBuilder()

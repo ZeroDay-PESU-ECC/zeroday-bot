@@ -2,11 +2,15 @@
   "name": "zeroday-bot",
   "version": "1.0.0",
   "description": "The Official Discord Bot for Zero Day PESU ECC Discord Server",
-  "main": "./src/index.js",
+  "main": "src/index",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "node src/index",
+    "dev": "nodemon src/index",
     "deploy": "node src/deploy-commands",
+    "list" : "node src/list-events && node src/list-message-commands && node src/list-slash-commands",
+    "events": "node src/list-events",
+    "message-commands": "node src/list-message-commands",
+    "slash-commands" : "node src/list-slash-commands",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

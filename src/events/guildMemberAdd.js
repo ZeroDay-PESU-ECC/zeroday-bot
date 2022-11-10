@@ -1,11 +1,11 @@
 const { Events, EmbedBuilder } = require('discord.js');
 
 module.exports = {
-    disabled: false,
+    disabled: true,
     name: Events.GuildMemberAdd,
     once: false,
     async handle(client, member) {
-        if (!client.CONTRACTS) return;
+        if (member.user.bot) return;
 
         const welcomeEmbed = new EmbedBuilder()
             .setColor(client.EMBEDS.THEME)

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     disabled: false,
@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['h'],
     usage: 'help (category-name|command-name)',
     description: 'Sends a guide of available commands or information regarding a particular category/command',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: false,
     type: ['SLASH', 'MESSAGE'],
     data:
@@ -56,7 +56,6 @@ function help(client, author, member, query) {
             for (const cmd of category.commands) {
                 commandList += '\n\u200b     ▫`' + cmd.name + '` ';
             }
-            // helpEmbed.addField(`${category.emoji || ' '} ${category.name}`, commandList);
             helpEmbed.addFields([{ name: `${category.emoji || ' '} ${category.name}`, value: commandList }]);
         }
         found = true;

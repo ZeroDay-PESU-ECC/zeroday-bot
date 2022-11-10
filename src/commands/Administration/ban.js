@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['bar'],
     usage: 'ban <user> (reason)',
     description: 'Bans mentioned user from server.',
-    permissions: ['BAN_MEMBERS'],
+    permissions: [PermissionFlagsBits.BanMembers],
     cooldown: false,
     type: ['SLASH', 'MESSAGE'],
     data: new SlashCommandBuilder()

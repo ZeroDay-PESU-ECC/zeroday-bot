@@ -10,7 +10,7 @@
         "MESSAGE" : "YOU"
     },
     "MESSAGES" : {
-        "ENTRY"   : "Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.\nUpload your signed PDF to this [form]( ).",
+        "ENTRY"   : "Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.",
         "HELP"    : "Hello there!\nThis is Zero Day PESU ECC's very own discord bot!",
         "SOCIALS" : "Hello from Zero Day PESU ECC!\nYou can follow us on our social media handles using the buttons below :)"
     },
@@ -18,7 +18,6 @@
         "THEME" : "#000000"
     },
     "IGNORE"    : false,
-    "CONTRACTS" : true,
     "WHITELISTED" : {
         "ROLES" : [
             "ADMIN",
@@ -38,17 +37,45 @@
     "LOGS": {
         "BOT"  : "bot-log",
         "MOD"  : "mod-log",
-        "FLAG" : "flag-log"
+        "FLAG" : "flag-log",
+        "ROLE" : "roles-log"
     },
     "APIS": {
         "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",
         "CHALLENGES"  : "https://zeroday.vercel.app/api/db/challenges",
         "LEADERBOARD" : "https://zeroday.vercel.app/api/db/leaderboard"
     },
+    "REACTROLES": {
+        "CHANNEL": "roles",
+        "REACTIONS": {
+            "✅": "verified",
+            "👻": "ghost"
+        }
+    },
+    "RESOURCES": [
+        {
+            "HEADING": "",
+            "ALIASES": [],
+            "TOPICS" : [
+                {
+                    "NAME": "",
+                    "URL":  ""
+                },
+                {
+                    "NAME": "",
+                    "URL":  ""
+                }
+            ]
+        }
+    ],
     "ATTACHMENTS" : {
         "CONTRACT" : {
             "NAME" : "Club-Contract.pdf",
-            "PATH" : "./media/contract.pdf"
+            "PATH" : "./media/zeroday-contract.docx"
+        },
+        "CONTRACT_CORE" : {
+            "NAME" : "Club-Contract-Core.pdf",
+            "PATH" : "./media/zeroday-contract-core.docx"
         },
         "GUIDE" : {
             "NAME" : "guide.mp4",

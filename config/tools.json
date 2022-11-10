@@ -1,0 +1,189 @@
+{
+    "DESCRIPTION" : "Here are some tools that you can use in CTFs!",
+    "CATEGORIES": [
+        {
+            "HEADING": "Reverse Engineering and PWN",
+            "ALIASES": [
+                "re",
+                "reverse",
+                "pwn"
+            ],
+            "LINKS": {
+                "gdb": "https://www.gnu.org/software/gdb/",
+                "pwndbg": "https://github.com/pwndbg/pwndbg",
+                "pwntools": "https://github.com/Gallopsled/pwntools",
+                "gef": "https://github.com/hugsy/gef",
+                "peda": "https://github.com/longld/peda",
+                "gdb-peda-pwndbg-gef": "https://github.com/apogiatzis/gdb-peda-pwndbg-gef",
+                "ghidra": "https://ghidra-sre.org/",
+                "ida": "https://www.hex-rays.com/products/ida/",
+                "radare2": "https://radare.org/",
+                "angr": "https://angr.io/",
+                "triton": "https://triton.quarkslab.com/",
+                "binaryninja": "https://binary.ninja/",
+                "barf": "https://github.com/programa-stic/barf-project",
+                "hopper": "https://www.hopperapp.com/",
+                "qemu": "https://www.qemu.org/",
+                "ROPgadget": "https://github.com/JonathanSalwan/ROPgadget",
+                "one_gadget": "https://github.com/david942j/one_gadget",
+                "ropper": "https://github.com/sashs/Ropper",
+                "checksec": "https://github.com/slimm609/checksec.sh",
+                "ltrace": "https://github.com/ice799/ltrace",
+                "snowman": "https://github.com/yegord/snowman",
+                "APK Tool": "https://github.com/iBotPeaches/Apktool",
+                "windbg": "http://www.windbg.org/"
+            }
+        },
+        {
+            "HEADING": "Cryptography",
+            "ALIASES": [
+                "cryptography",
+                "crypto"
+            ],
+            "LINKS": {
+                "z3": "https://github.com/Z3Prover/z3",
+                "sage": "https://www.sagemath.org/",
+                "dcode": "https://www.dcode.fr/",
+                "ciphey": "https://github.com/Ciphey/Ciphey",
+                "CyberChef": "https://gchq.github.io/CyberChef/",
+                "RSA-CTFTool": "https://github.com/Ganapati/RsaCtfTool",
+                "padding oracle-attacker": "https://github.com/KishanBagaria/padding-oracle-attacker",
+                "pycryptodome": "https://pycryptodome.readthedocs.io/en/latest/",
+                "vigenere solver": "https://www.guballa.de/vigenere-solver",
+                "quipqiup": "https://quipqiup.com/",
+                "xortool": "https://github.com/hellman/xortool",
+                "yafu": "https://sourceforge.net/projects/yafu/"
+            }
+        },
+        {
+            "HEADING": "Hashing and Password Cracking",
+            "ALIASES": [
+                "hash",
+                "cracking",
+                "dictionary"
+            ],
+            "LINKS": {
+                "hashcat": "https://hashcat.net/hashcat/",
+                "john": "https://www.openwall.com/john/",
+                "hash-identifier": "https://github.com/blackploit/hash-identifier",
+                "hashkill": "https://github.com/gat3way/hashkill",
+                "crackstation": "https://crackstation.net/",
+                "md5decrypt": "https://md5decrypt.net/en/",
+                "nozzir": "https://github.com/intrd/nozzlr",
+                "patator": "https://github.com/lanjelot/patator",
+                "CeWL": "https://digi.ninja/projects/cewl.php",
+                "pkcrack": "https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html"
+            }
+        },
+        {
+            "HEADING": "Networking",
+            "ALIASES": [
+                "network",
+                "networks"
+            ],
+            "LINKS": {
+                "nmap": "https://github.com/nmap/nmap",
+                "wireshark": "https://www.wireshark.org/",
+                "tcpdump": "https://www.tcpdump.org/",
+                "termshark": "https://github.com/gcla/termshark",
+                "masscan": "https://github.com/robertdavidgraham/masscan",
+                "houdini": "https://github.com/cybersecsi/HOUDINI"
+            }
+        },
+        {
+            "HEADING": "Steganography",
+            "ALIASES": [
+                "stego"
+            ],
+            "LINKS": {
+                "stegsolve": "https://github.com/zardus/ctf-tools/blob/master/stegsolve/install",
+                "steghide": "https://github.com/StefanoDeVuono/steghide",
+                "exiftool": "https://exiftool.org/",
+                "exiv2": "https://www.exiv2.org/",
+                "stego-toolkit": "https://github.com/DominicBreuker/stego-toolkit",
+                "binwalk": "https://github.com/ReFirmLabs/binwalk",
+                "stegseek": "https://github.com/RickdeJager/stegseek",
+                "stegsnow": "https://www.kali.org/tools/stegsnow/",
+                "stegosaurus": "https://github.com/AngelKitty/stegosaurus",
+                "pngcheck": "http://www.libpng.org/pub/png/apps/pngcheck.html",
+                "pngtools": "https://packages.debian.org/sid/pngtools",
+                "audacity": "https://www.audacityteam.org/",
+                "sonic-visualiser": "https://www.sonicvisualiser.org/",
+                "DTMF Tones": "https://www.dtmf-tones.com/",
+                "stegolsb": "https://github.com/ragibson/Steganography",
+                "stegoveritas": "https://www.kali.org/tools/stegoveritas/",
+                "zsteg": "https://github.com/zed-0xff/zsteg",
+                "jsteg": "https://github.com/lukechampine/jsteg",
+                "foremost": "https://github.com/jonstewart/foremost",
+                "aircrack-ng": "https://www.aircrack-ng.org/",
+                "ophcrack": "https://github.com/luisgg/ophcrack",
+                "qpdf": "https://github.com/qpdf/qpdf",
+                "pdfparser": "https://github.com/smalot/pdfparser",
+                "peepdf": "https://github.com/jesparza/peepdf"
+            }
+        },
+        {
+            "HEADING": "Memory Forensics",
+            "ALIASES": [
+                "forensics"
+            ],
+            "LINKS": {
+                "volatility": "https://github.com/volatilityfoundation/volatility",
+                "shellbags": "https://github.com/williballenthin/shellbags",
+                "usbrip": "https://github.com/snovvcrash/usbrip"
+            }
+        },
+        {
+            "HEADING": "OS Int",
+            "ALIASES": [
+                "osint"
+            ],
+            "LINKS": {
+                "sherlock": "https://github.com/sherlock-project/sherlock",
+                "Photon": "https://github.com/s0md3v/Photon",
+                "theHarvester": "https://github.com/laramies/theHarvester",
+                "osintgram": "https://github.com/Datalux/Osintgram",
+                "phoneinfoga": "https://github.com/sundowndev/phoneinfoga"
+            }
+        },
+        {
+            "HEADING": "Web",
+            "ALIASES": [
+                "web"
+            ],
+            "LINKS": {
+                
+                "Burp Suite": "https://portswigger.net/burp",
+                "Postman": "https://www.postman.com/",
+                "Cookie Editor": "https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm"
+            }
+        },
+        {
+            "HEADING": "Payloads and Attacks",
+            "ALIASES": [
+                "payload"
+            ],
+            "LINKS": {
+                "PayloadsAllTheThings": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+                "AwesomeXSS": "https://github.com/s0md3v/AwesomeXSS",
+                "Metasploit": "https://www.metasploit.com/",
+                "BeEF": "https://beefproject.com/",
+                "hydra": "https://www.kali.org/tools/hydra/",
+                "bettercap": "https://github.com/bettercap/bettercap",
+                "sqlmap": "https://github.com/sqlmapproject/sqlmap",
+                "SSRFmap": "https://github.com/swisskyrepo/SSRFmap",
+                "XSStrike": "https://github.com/s0md3v/XSStrike",
+                "ysoserial": "https://github.com/frohoff/ysoserial",
+                "commix": "https://github.com/commixproject/commix",
+                "Markdown XSS Payloads": "https://github.com/cujanovic/Markdown-XSS-Payloads",
+                "Corsy": "https://github.com/s0md3v/Corsy",
+                "fuxploider": "https://github.com/almandin/fuxploider",
+                "tplmap": "https://github.com/epinna/tplmap",
+                "dirbuster": "https://sourceforge.net/projects/dirbuster/files/DirBuster%20Source/1.0-RC1/",
+                "dirb": "https://tools.kali.org/web-applications/dirb",
+                "SSRF Payloads": "https://pravinponnusamy.medium.com/ssrf-payloads-f09b2a86a8b4",
+                "XSRF Probe": "https://github.com/0xInfection/XSRFProbe"
+            }
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder, ButtonBuilder } = require('discord.js');
 
 module.exports = {
     disabled: false,
@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['social', 'insta', 'instagram', 'yt', 'youtube'],
     usage: 'socials',
     description: 'Sends club\'s social media handles',
-    permissions: ['SEND_MESSAGES'],
+    permissions: [PermissionFlagsBits.SendMessages],
     cooldown: false,
     type: ['SLASH', 'MESSAGE'],
     data: new SlashCommandBuilder()

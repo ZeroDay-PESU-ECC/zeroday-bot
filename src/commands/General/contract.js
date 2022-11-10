@@ -1,13 +1,13 @@
-const { EmbedBuilder } = require('discord.js');
+const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
-    disabled: false,
+    disabled: true,
     name: 'contract',
     aliases: ['contracts'],
     usage: 'contract',
     description: 'Sends contract info',
-    permissions: ['SEND_MESSAGES'],
-    cooldown: 5000,
+    permissions: [PermissionFlagsBits.SendMessages],
+    cooldown: 10000,
     type: ['MESSAGE'],
     async execute(client, message) {
         const contractEmbed = new EmbedBuilder()

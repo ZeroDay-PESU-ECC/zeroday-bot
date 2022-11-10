@@ -39,13 +39,15 @@ Category-name
 **File name :** Command Name
 
 ```
+const { PermissionFlagsBits } = require('discord.js');
+
 module.exports = {
     disabled: false,            // Boolean
     name: 'name',               // lowercase only
     aliases: ['alias1'],        // Array, lowercase only   
     usage: 'name',              // Arguments: <required> (optional)
     description: 'Description', // String
-    permissions: [],            // Array of string FLAGS or using permissions from discord.js
+    permissions: [],            // Array of PermissionFlagsBits FLAGS 
     cooldown: false,            // Integer in ms or false
     type: ['SLASH','MESSAGE'],  // Type of command: SLASH or MESSAGE or BOTH
     
