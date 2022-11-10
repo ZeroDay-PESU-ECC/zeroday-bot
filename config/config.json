@@ -70,11 +70,11 @@
     ],
     "ATTACHMENTS" : {
         "CONTRACT" : {
-            "NAME" : "Club-Contract.pdf",
+            "NAME" : "Club-Contract.docx",
             "PATH" : "./media/zeroday-contract.docx"
         },
         "CONTRACT_CORE" : {
-            "NAME" : "Club-Contract-Core.pdf",
+            "NAME" : "Club-Contract-Core.docx",
             "PATH" : "./media/zeroday-contract-core.docx"
         },
         "GUIDE" : {

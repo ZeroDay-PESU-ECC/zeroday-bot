@@ -10,25 +10,22 @@ module.exports = {
                 const newContractEmbed = new EmbedBuilder()
                     .setColor(client.EMBEDS.THEME)
                     .setTitle(`Club Contract for ${channel.name.replace('ticket-', '')}`)
-                    .setDescription('Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\nFor info on how to add digital signatures, check the mp4 video guide.\n\n**Please upload the signed contract as `contract-(your name).pdf` and `contract-core-(your name).pdf` one by one.**')
+                    .setDescription('Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\n\n**Please upload the signed contract as `contract-(your name).pdf` and `contract-core-(your name).pdf` one by one.**')
                     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                     .setFooter({ text: 'If you need help, feel free to ask!' });
 
                 channel.send({ embeds: [newContractEmbed] })
                     .then(msg => {
                         msg.channel.send({
-                            files: [{
-                                name: client.ATTACHMENTS.GUIDE.NAME,
-                                attachment: client.ATTACHMENTS.GUIDE.PATH,
-                            },
-                            {
-                                name: client.ATTACHMENTS.CONTRACT.NAME,
-                                attachment: client.ATTACHMENTS.CONTRACT.PATH,
-                            },
-                            {
-                                name: client.ATTACHMENTS.CONTRACT_CORE.NAME,
-                                attachment: client.ATTACHMENTS.CONTRACT_CORE.PATH,
-                            },
+                            files: [
+                                {
+                                    name: client.ATTACHMENTS.CONTRACT.NAME,
+                                    attachment: client.ATTACHMENTS.CONTRACT.PATH,
+                                },
+                                {
+                                    name: client.ATTACHMENTS.CONTRACT_CORE.NAME,
+                                    attachment: client.ATTACHMENTS.CONTRACT_CORE.PATH,
+                                },
                             ],
                         });
                     })
