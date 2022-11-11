@@ -40,8 +40,8 @@
         "MOD"  : "mod-log",
         "FLAG" : "flag-log",
         "ROLE" : "roles-log",
-        "CONTRACTS" : "contract",
-        "CORECONTRACTS" : "core-contract"
+        "CONTRACTS" : "contracts",
+        "CORECONTRACTS" : "core-contracts"
     },
     "APIS": {
         "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",
