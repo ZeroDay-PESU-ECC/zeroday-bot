@@ -40,7 +40,8 @@
         "MOD"  : "mod-log",
         "FLAG" : "flag-log",
         "ROLE" : "roles-log",
-        "CONTRACTS" : "contract-log"
+        "CONTRACTS" : "contract",
+        "CORECONTRACTS" : "core-contract"
     },
     "APIS": {
         "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",
@@ -72,11 +73,11 @@
     ],
     "ATTACHMENTS" : {
         "CONTRACT" : {
-            "NAME" : "Club-Contract.docx",
+            "NAME" : "contract.docx",
             "PATH" : "./media/zeroday-contract.docx"
         },
         "CONTRACT_CORE" : {
-            "NAME" : "Club-Contract-Core.docx",
+            "NAME" : "contract-core.docx",
             "PATH" : "./media/zeroday-contract-core.docx"
         },
         "GUIDE" : {

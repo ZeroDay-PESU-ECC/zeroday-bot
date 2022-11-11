@@ -10,7 +10,7 @@ module.exports = {
                 const newContractEmbed = new EmbedBuilder()
                     .setColor(client.EMBEDS.THEME)
                     .setTitle(`Club Contract for ${channel.name.replace('ticket-', '')}`)
-                    .setDescription('Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\n\n**Please upload the signed contract as `contract-(your name).pdf` and `contract-core-(your name).pdf` one by one.**')
+                    .setDescription('Welcome to Zero Day PESU ECC!\nNew members are required to sign the contract given below.\n\n**Please upload the signed contract as `contract-(your SRN).pdf` and `contract-core-(your SRN).pdf` one by one.**')
                     .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                     .setFooter({ text: 'If you need help, feel free to ask!' });
 

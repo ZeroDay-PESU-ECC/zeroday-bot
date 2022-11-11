@@ -18,10 +18,35 @@ module.exports = {
                 ch => ch.name.toLocaleLowerCase() == client.LOGS.CONTRACT &&
                     ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
             );
-            if (!contractLog) return;
+
+            const contractCoreLog = message.channel.guild.channels.cache.find(
+                ch => ch.name.toLocaleLowerCase() == client.LOGS.CORECONTRACT &&
+                    ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
+            );
+            if (!contractLog || !contractCoreLog) return;
             if (message.attachments.size > 0) {
+                if (message.attachments.size > 1) {
+                    return message.channel.send('Please send one contract at a time.');
+                }
                 const attachment = message.attachments.first();
-                if (attachment.name.startsWith('contract-') && attachment.name.endsWith('.pdf')) {
+                if (attachment.size > 5000000 || !attachment.name.endsWith('.pdf')) {
+                    return message.channel.send('Please send a PDF file under 5MB.');
+                }
+                const regex = /((contract-)||(contract-core)){1}PES[12]UG(\d){2}[A-Z]{2}(\d){3}(\.pdf)/;
+                const match = regex.exec(attachment.name);
+                if (!match) {
+                    return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or .');
+                }
+                attachment.name = attachment.name.toLowerCase();
+                if (attachment.name.startsWith('contract-core-') && attachment.name.endsWith('.pdf')) {
+                    const embed = new EmbedBuilder()
+                        .setTitle('Core Contract Attachment')
+                        .setDescription(`**Channel:** <#${message.channel.id}>\n**User:** <@${message.author.id}>`)
+                        .setFooter({ text: `Uploaded by ${message.author.tag} at ${message.createdAt.toLocaleString()}`, iconURL: message.author.displayAvatarURL({ dynamic: true }) });
+                    contractCoreLog.send({ embeds: [embed], files: [attachment] });
+                    message.channel.send(`Core Contract ${attachment.name} received. The <@&1031033314636730398> have been notified about this and will get back to you shortly.`);
+                }
+                else if (attachment.name.startsWith('contract-') && attachment.name.endsWith('.pdf')) {
                     const embed = new EmbedBuilder()
                         .setTitle('Contract Attachment')
                         .setDescription(`**Channel:** <#${message.channel.id}>\n**User:** <@${message.author.id}>`)
