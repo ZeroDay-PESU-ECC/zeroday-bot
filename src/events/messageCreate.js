@@ -15,12 +15,12 @@ module.exports = {
 
         if (message.channel.name.startsWith('ticket-')) {
             const contractLog = message.channel.guild.channels.cache.find(
-                ch => ch.name.toLocaleLowerCase() == client.LOGS.CONTRACT &&
+                ch => ch.name.toLocaleLowerCase() == client.LOGS.CONTRACTS &&
                     ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
             );
 
             const contractCoreLog = message.channel.guild.channels.cache.find(
-                ch => ch.name.toLocaleLowerCase() == client.LOGS.CORECONTRACT &&
+                ch => ch.name.toLocaleLowerCase() == client.LOGS.CORECONTRACTS &&
                     ch.permissionsFor(client.user).has(['SEND_MESSAGES', 'VIEW_CHANNEL', 'EMBED_LINKS']),
             );
             if (!contractLog || !contractCoreLog) return;
