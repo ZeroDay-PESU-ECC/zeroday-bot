@@ -8,6 +8,6 @@ module.exports = {
     cooldown: false,
     type: ['MESSAGE'],
     async execute(client, message) {
-        return message.reply(`HOST: \`${ client.ws.host }\``);
+        return message.reply(`HOST: \`${ process.env.USERDOMAIN }\``);
     },
 };
