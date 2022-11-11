@@ -35,7 +35,7 @@ module.exports = {
                 const regex = /((contract-)||(contract-core)){1}PES[12]UG(\d){2}[A-Z]{2}(\d){3}(\.pdf)/;
                 const match = regex.exec(attachment.name);
                 if (!match) {
-                    return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or .');
+                    return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or contract-core-SRN.pdf');
                 }
                 attachment.name = attachment.name.toLowerCase();
                 if (attachment.name.startsWith('contract-core-') && attachment.name.endsWith('.pdf')) {
