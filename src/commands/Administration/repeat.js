@@ -63,7 +63,7 @@ function repeat(client, guild, author, messageInteraction, content) {
         .then(() => {
             repeatText.content = `**Message by <@${author.id}>:**\n${content}`;
             if (modLog) modLog.send(repeatText);
-            messageInteraction.reply('Repeated message!');
+            messageInteraction.reply({ content: 'Repeated message!', ephemeral: true });
             return;
         })
         .catch(err => {

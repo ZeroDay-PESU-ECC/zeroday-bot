@@ -39,7 +39,8 @@
         "BOT"  : "bot-log",
         "MOD"  : "mod-log",
         "FLAG" : "flag-log",
-        "ROLE" : "roles-log"
+        "ROLE" : "roles-log",
+        "CONTRACTS" : "contract-log"
     },
     "APIS": {
         "ADMIN"       : "https://zeroday.vercel.app/api/db/admin",
