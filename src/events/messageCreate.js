@@ -33,10 +33,10 @@ module.exports = {
                     return message.channel.send('Please send a PDF file under 5MB.');
                 }
                 const regex = /((CONTRACT-)||(CONTRACT-CORE)){1}PES[12]UG(\d){2}[A-Z]{2}(\d){3}(\.pdf)/;
-                const match = regex.exec(attachment.name.toUpperCase());
-                if (!match) {
-                    return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or contract-core-SRN.pdf (e.g. contract-PES1UG20CS001.pdf or contract-core-PES1UG20CS001.pdf)');
-                }
+                // const match = regex.exec(attachment.name.toUpperCase());
+                // if (!match) {
+                //     return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or contract-core-SRN.pdf (e.g. contract-PES1UG20CS001.pdf or contract-core-PES1UG20CS001.pdf)');
+                // }
                 attachment.name = attachment.name.toLowerCase();
                 if (attachment.name.startsWith('contract-core-') && attachment.name.endsWith('.pdf')) {
                     const embed = new EmbedBuilder()
