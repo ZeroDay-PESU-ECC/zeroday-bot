@@ -32,7 +32,7 @@ module.exports = {
                 if (attachment.size > 5000000 || !attachment.name.endsWith('.pdf')) {
                     return message.channel.send('Please send a PDF file under 5MB.');
                 }
-                const regex = /((contract-)||(contract-core)){1}PES[12]UG(\d){2}[A-Z]{2}(\d){3}(\.pdf)/;
+                const regex = /((CONTRACT-)||(CONTRACT-CORE)){1}PES[12]UG(\d){2}[A-Z]{2}(\d){3}(\.pdf)/;
                 const match = regex.exec(attachment.name.toUpperCase());
                 if (!match) {
                     return message.channel.send('Please send a contract with the correct format of contract-SRN.pdf or contract-core-SRN.pdf');
